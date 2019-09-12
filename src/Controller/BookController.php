@@ -19,8 +19,9 @@ class BookController extends AbstractController
     public function index(BookListService $listService, SerializerInterface $serializer)
     {
         //dump($listService);
+        // i add this, for changes
         $books = $listService->get();
-
+        
         return new JsonResponse(
             $serializer->serialize($books, 'json'),
             200,
